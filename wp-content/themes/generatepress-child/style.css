@@ -9,5 +9,247 @@
 */
 
 /* =============================================
-   Add your custom CSS below
+   Global reset / base
    ============================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	font-family: 'Hind Siliguri', sans-serif;
+	color: #1A1A1A;
+	background: #F9FAFB;
+	line-height: 1.7;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; height: auto; }
+
+/* =============================================
+   Header & Navigation
+   ============================================= */
+
+.bmf-header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: #ffffff;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	transition: box-shadow 0.2s ease;
+}
+
+.bmf-header.is-scrolled {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+}
+
+.bmf-nav-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0.75rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+/* Logo */
+
+.bmf-logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+	flex-shrink: 0;
+}
+
+.bmf-logo__img,
+.bmf-logo .custom-logo {
+	height: 56px;
+	width: auto;
+}
+
+.bmf-logo__text {
+	display: none;
+}
+
+.bmf-logo__title {
+	display: block;
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #008e48;
+	line-height: 1.2;
+}
+
+.bmf-logo__subtitle {
+	display: block;
+	font-size: 0.875rem;
+	color: #64748b;
+}
+
+/* Desktop nav menu */
+
+.bmf-nav-menu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.bmf-nav-menu > li {
+	margin: 0;
+	padding: 0;
+}
+
+.bmf-nav-menu > li > a {
+	font-size: 0.9375rem;
+	font-weight: 500;
+	color: #1A1A1A;
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 3px;
+}
+
+.bmf-nav-menu > li > a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: #008e48;
+	transition: width 0.3s ease;
+}
+
+.bmf-nav-menu > li > a:hover::after,
+.bmf-nav-menu > .current-menu-item > a::after {
+	width: 100%;
+}
+
+.bmf-nav-menu > .current-menu-item > a {
+	color: #008e48;
+}
+
+/* Nav actions */
+
+.bmf-nav-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-shrink: 0;
+}
+
+/* Donate button */
+
+.bmf-btn-donate {
+	background: #008e48;
+	color: #ffffff;
+	font-family: 'Hind Siliguri', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0.625rem 1.25rem;
+	border-radius: 0.5rem;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	line-height: 1.4;
+	transition: background 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0 4px 12px rgba(0, 142, 72, 0.3);
+}
+
+.bmf-btn-donate:hover {
+	background: #0a251c;
+	color: #ffffff;
+	text-decoration: none;
+	box-shadow: 0 6px 16px rgba(0, 142, 72, 0.4);
+}
+
+/* Hamburger */
+
+.bmf-hamburger {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+}
+
+.bmf-hamburger__bar {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background: #008e48;
+	border-radius: 2px;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	transform-origin: center;
+}
+
+.bmf-hamburger.is-open .bmf-hamburger__bar:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+
+.bmf-hamburger.is-open .bmf-hamburger__bar:nth-child(2) {
+	opacity: 0;
+}
+
+.bmf-hamburger.is-open .bmf-hamburger__bar:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu */
+
+.bmf-mobile-menu {
+	background: #ffffff;
+	border-top: 1px solid #E5E7EB;
+	padding: 1rem;
+}
+
+.bmf-mobile-menu[hidden] {
+	display: none;
+}
+
+.bmf-mobile-nav-menu {
+	list-style: none;
+	margin: 0 0 0.75rem;
+	padding: 0;
+}
+
+.bmf-mobile-nav-menu > li {
+	margin: 0;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.bmf-mobile-nav-menu > li > a {
+	display: block;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #1A1A1A;
+	padding: 0.75rem 0;
+	text-decoration: none;
+}
+
+.bmf-mobile-nav-menu > .current-menu-item > a {
+	color: #008e48;
+	font-weight: 600;
+}
+
+.bmf-btn-donate--mobile {
+	width: 100%;
+	text-align: center;
+	display: block;
+}
+
+/* Responsive — ≥1024px */
+
+@media (min-width: 1024px) {
+	.bmf-logo__text  { display: block; }
+	.bmf-nav-menu    { display: flex; }
+	.bmf-hamburger   { display: none; }
+	.bmf-mobile-menu { display: none !important; }
+}
