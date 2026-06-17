@@ -76,7 +76,50 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 // -----------------------------------------------
-// 5. Tailwind CDN — development only
+// 5. Add nav-link class to all primary menu links
+//    (needed for the underline animation in style.css)
+// -----------------------------------------------
+add_filter( 'nav_menu_link_attributes', function( $atts, $item ) {
+    $atts['class'] = isset( $atts['class'] ) ? $atts['class'] . ' nav-link' : 'nav-link';
+    return $atts;
+}, 10, 2 );
+
+
+// -----------------------------------------------
+// 6. Fallback nav — shown when no WP menu is assigned.
+//    wp_nav_menu() calls this automatically via fallback_cb.
+//    Remove once a menu is assigned in Appearance → Menus.
+// -----------------------------------------------
+function bmf_nav_fallback( $args ) {
+    $items = [
+        [ 'url' => home_url( '/' ),          'label' => 'হোম' ],
+        [ 'url' => home_url( '/about' ),     'label' => 'আমাদের সম্পর্কে' ],
+        [ 'url' => home_url( '/our-works' ), 'label' => 'আমাদের কার্যক্রম' ],
+        [ 'url' => '#',                      'label' => 'সাফল্যের গল্প' ],
+        [ 'url' => '#',                      'label' => 'ব্লগ' ],
+        [ 'url' => '#',                      'label' => 'গ্যালারি' ],
+        [ 'url' => home_url( '/contact' ),   'label' => 'যোগাযোগ' ],
+    ];
+
+    $current_url = rtrim( home_url( add_query_arg( [] ) ), '/' );
+
+    echo '<ul class="' . esc_attr( $args['menu_class'] ) . '">';
+    foreach ( $items as $item ) {
+        $is_active = ( rtrim( $item['url'], '/' ) === $current_url );
+        $link_class = 'nav-link' . ( $is_active ? ' !text-primary' : '' );
+        printf(
+            '<li><a href="%s" class="%s">%s</a></li>',
+            esc_url( $item['url'] ),
+            esc_attr( $link_class ),
+            esc_html( $item['label'] )
+        );
+    }
+    echo '</ul>';
+}
+
+
+// -----------------------------------------------
+// 6. Tailwind CDN — development only
 //    Replace with CLI build before going to production
 // -----------------------------------------------
 add_action( 'wp_enqueue_scripts', function() {
