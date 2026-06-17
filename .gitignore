@@ -1,0 +1,78 @@
+# --- Secrets & environment ---
+wp-config.php
+.env
+.env.*
+!.env.example
+
+# --- WordPress core (not vendored — install same version from wordpress.org or copy from a full WP tree) ---
+/wp-admin/
+/wp-includes/
+/*.php
+!/wp-config-sample.php
+/license.txt
+/readme.html
+
+# --- Third-party plugins (only custom plugins are tracked; add !/wp-content/plugins/your-plugin/ for each one) ---
+/wp-content/plugins/*
+!/wp-content/plugins/botlab-sections/
+!/wp-content/plugins/botlab-sections/**
+!/wp-content/plugins/index.php
+
+# --- Themes (only the child theme is tracked; all parent/third-party themes excluded) ---
+/wp-content/themes/*
+!/wp-content/themes/generatepress-child/
+!/wp-content/themes/generatepress-child/**
+
+# --- WordPress runtime (regenerated / large) ---
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/et-cache/
+et-cache/
+wp-content/litespeed/
+litespeed/
+wp-content/mu-plugins/
+mu-plugins/
+wp-content/_live/
+_live/
+wp-content/upgrade-temp-backup/
+upgrade-temp-backup/
+wp-content/cache/
+wp-content/speedycache-config/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/debug.log
+*.log
+
+# --- Migration / backup plugin dumps (outside plugins/) ---
+wp-content/ai1wm-backups/
+
+# --- Composer / Node (if added later) ---
+/vendor/
+node_modules/
+
+# --- JetBrains (PhpStorm, WebStorm, IDEA, Fleet) ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# --- VS Code ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# --- OS & misc ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.swp
+*.swo
+*~

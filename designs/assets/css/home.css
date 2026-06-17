@@ -1,0 +1,41 @@
+/* Typography */
+body {
+  font-family: "Ubuntu", "Hind Siliguri", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+.font-bornomala {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+}
+
+/* Custom Styling */
+.hero-gradient {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://placehold.co/1920x800/00331a/ffffff?text=Humanitarian+Work+Image");
+  background-size: cover;
+  background-position: center;
+}
+.donation-card-overlap {
+  margin-top: -60px;
+}
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: translateY(-5px);
+}
+.nav-link:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #008e48;
+  transition: width 0.3s;
+}
+.nav-link:hover:after {
+  width: 100%;
+}

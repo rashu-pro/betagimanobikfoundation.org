@@ -1,0 +1,898 @@
+<!doctype html>
+<html class="light" lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>আমাদের সম্পর্কে | বেতাগী মানবিক ফাউন্ডেশন</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#008e48",
+              secondary: "#fbbd08",
+              dark: "#0a251c",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+      <nav
+        class="container mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            alt="Betagi Manobik Foundation Logo"
+            class="h-14 w-auto"
+            src="assets/images/logo-betagimanobikfoundation.jpg"
+          />
+          <div class="hidden lg:block">
+            <span class="text-primary text-xl font-bold block leading-tight"
+              >বেতাগী মানবিক</span
+            >
+            <span class="text-slate-600 text-sm block">ফাউন্ডেশন</span>
+          </div>
+        </div>
+        <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
+          <li class=""><a class="nav-link" href="home.html">হোম</a></li>
+          <li class="">
+            <a class="nav-link text-primary" href="#">আমাদের সম্পর্কে</a>
+          </li>
+          <li class=""><a class="nav-link" href="our_works.html">আমাদের কার্যক্রম</a></li>
+          <li class=""><a class="nav-link" href="#">সাফল্যের গল্প</a></li>
+          <li class=""><a class="nav-link" href="#">ব্লগ</a></li>
+          <li class=""><a class="nav-link" href="#">গ্যালারি</a></li>
+          <li class=""><a class="nav-link" href="contact.html">যোগাযোগ</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <button
+            class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition shadow-lg"
+          >
+            দান করুন
+          </button>
+          <button class="lg:hidden text-primary p-2">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 6h16M4 12h16m-7 6h7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- END: MainHeader -->
+    <main class="container mx-auto px-4 py-12">
+      <!-- Hero Section -->
+      <section class="mb-12 fade-in">
+        <div
+          class="container relative rounded-xl overflow-hidden h-[400px] md:h-[500px]"
+        >
+          <img
+            alt=""
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida/AP1WRLsqgcTdW7MQ0As9y8e2caPkisu_axEXxIidO8iI5MDqHuONbrBlDoZnmDTSEcFeORR473WP1vDYd5RtgRFrjfD4bcQV2pXwI3IagliiQo_IkkBpxbxObLdVb0QDGmvqz-n-mK_Rc4b5sjZP1qqqdTpbZVy2ohYtQ2Ur9HpswLSPZkXGaCGTf8rTCLuj6OQgzNlTEgQVkY_tN0xxB5ZwU1N4sKpS10RULr8RoIBqkQCtIYAPQTwEv7EeotZG"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-8 md:p-12"
+          >
+            <div class="max-w-3xl">
+              <h1 class="text-white text-3xl md:text-5xl mb-6">
+                মানবতার সেবায় আমরা একবদ্ধ
+              </h1>
+              <p class="text-white/90 text-base md:text-lg">
+                বেতাগী ইউনিয়ন ৭ নং ওয়ার্ডের শিকড় থেকে বিশ্বজুড়ে বিস্তৃত আমাদের
+                মানবিক যাত্রা।
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Mission & Local Roots -->
+      <section class="mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1">
+            <span class="text-primary uppercase tracking-wider mb-4 block"
+              >আমাদের লক্ষ্য</span
+            >
+            <h2 class="text-3xl md:text-4xl mb-6 text-dark">
+              স্বচ্ছতা ও স্থানীয় শেকড়ের প্রতি দায়বদ্ধতা
+            </h2>
+            <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8">
+              বেতাগী ইউনিয়ন ৭ নং ওয়ার্ডের মানুষের পাশে দাঁড়ানোর লক্ষ্য নিয়ে
+              আমাদের যাত্রা শুরু। আমরা বিশ্বাস করি, প্রকৃত উন্নয়ন সম্ভব হয় যখন
+              স্থানীয় সমস্যাগুলো স্থানীয় উদ্যোগের মাধ্যমেই সমাধান করা হয়।
+              প্রতিটি দানে স্বচ্ছতা নিশ্চিত করা আমাদের অন্যতম প্রধান স্তম্ভ।
+            </p>
+            <div class="grid grid-cols-2 gap-6">
+              <div
+                class="p-6 bg-primary/10 rounded-lg border border-primary/20"
+              >
+                <span
+                  class="material-symbols-outlined text-primary mb-2"
+                  data-icon="verified_user"
+                  >verified_user</span
+                >
+                <h4 class="font-bold text-primary mb-1">১০০% স্বচ্ছতা</h4>
+                <p class="text-sm text-slate-600">
+                  প্রতিটি পয়সার হিসাব জনসম্মুখে প্রকাশ করা হয়।
+                </p>
+              </div>
+              <div
+                class="p-6 bg-secondary/10 rounded-lg border border-secondary/20"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary mb-2"
+                  data-icon="home_pin"
+                  >home_pin</span
+                >
+                <h4 class="font-bold text-secondary mb-1">স্থানীয় শিকড়</h4>
+                <p class="text-sm text-slate-600">
+                  ৭ নং ওয়ার্ডের প্রতিটি মানুষের দ্বারে আমরা পৌঁছে যাই।
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="order-1 md:order-2 rounded-xl overflow-hidden shadow-lg h-full min-h-[300px] bg-slate-50 relative"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="A detailed wide shot of a local community meeting in a rural village setting. Volunteers in green vests sit in a circle with village elders under a large banyan tree, discussing social welfare projects. The lighting is warm golden hour sunlight filtering through the leaves, creating a soft, communal atmosphere. The aesthetic is modern corporate documentary style with high clarity and a focus on authentic human connection."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4vf_UslKoWhF41diaXK9LCGkIyFOBuZEuJPgQ7u7p-SW3GGJGGzYpe8OaXoNPLKnI6v2lWr7q6OhkhdVhV6Fdx5JZsmZVnnzUKIbAppNd9SVy5ov_YuzE57Z8AoG3p8WJQpHzzfHpwnp_0YM_WMPq3vQObSfiRR_vr3NCp-_3YLPTqvil0w9iFoJBW2oSFoS94l89LFEwX9A4GQKbN2kvA_5IcMYT0sbIBnl7FgOHyFkANbKcNDGsmDtYnRWwF5X85Faa-YUX9beG"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- History Bento Grid -->
+      <section class="mb-12 py-12 bg-white rounded-3xl px-8 md:px-12">
+        <div class="text-center mb-12">
+          <span class="text-secondary uppercase tracking-wider mb-4 block"
+            >আমাদের ইতিহাস</span
+          >
+          <h2 class="text-3xl md:text-4xl text-dark">
+            প্রতিষ্ঠার শুরু থেকে সমাজসেবায় উৎসর্গকৃত
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="md:col-span-2 p-12 bg-primary text-white rounded-2xl flex flex-col justify-center relative overflow-hidden group"
+          >
+            <div
+              class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform duration-500"
+            >
+              <span
+                class="material-symbols-outlined text-[120px]"
+                data-icon="history_edu"
+                >history_edu</span
+              >
+            </div>
+            <h3 class="text-3xl mb-6">শুরুর গল্প</h3>
+            <p class="text-lg opacity-90 leading-relaxed">
+              বেতাগী মানবিক ফাউন্ডেশন কেবল একটি সংগঠন নয়, এটি ৭ নং ওয়ার্ডের একদল
+              উদ্যমী তরুণের স্বপ্নের ফসল। প্রতিষ্ঠার প্রথম দিন থেকেই আমরা
+              অসুস্থদের পাশে দাঁড়ানো, দরিদ্র শিক্ষার্থীদের সহায়তা এবং জরুরি
+              ত্রাণ বিতরণে সর্বদা সচেষ্ট থেকেছি।
+            </p>
+          </div>
+          <div
+            class="p-12 bg-slate-50 rounded-2xl flex flex-col justify-between border border-slate-200"
+          >
+            <h3 class="text-3xl text-primary mb-6">সেবার মাইলফলক</h3>
+            <ul class="space-y-6">
+              <li class="flex items-center gap-6">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold"
+                  >০১</span
+                >
+                <span class="text-slate-800">বিনামূল্যে চিকিৎসা ক্যাম্প</span>
+              </li>
+              <li class="flex items-center gap-6">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold"
+                  >০২</span
+                >
+                <span class="text-slate-800">শিক্ষা উপকরণ বিতরণ</span>
+              </li>
+              <li class="flex items-center gap-6">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold"
+                  >০৩</span
+                >
+                <span class="text-slate-800">শীতবস্ত্র ও ত্রাণ সহায়তা</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Global Connection -->
+      <section class="mb-12">
+        <div
+          class="bg-dark text-white rounded-3xl p-8 md:p-12 overflow-hidden relative"
+        >
+          <div class="absolute top-0 right-0 w-1/3 h-full opacity-10">
+            <span
+              class="material-symbols-outlined text-[300px]"
+              data-icon="public"
+              >public</span
+            >
+          </div>
+          <div class="relative z-10 max-w-4xl">
+            <span class="text-green-200 uppercase mb-4 block"
+              >গ্লোবাল নেটওয়ার্ক</span
+            >
+            <h2 class="text-3xl md:text-4xl mb-6">
+              প্রবাসীদের হৃদস্পন্দন: ওমান ও কাতার থেকে সমর্থন
+            </h2>
+            <p class="text-slate-100 leading-relaxed mb-12">
+              আমাদের এই পথচলায় ওমান এবং কাতারে অবস্থানরত আমাদের প্রবাসী ভাইদের
+              অবদান অনস্বীকার্য। সুদূর প্রবাসে থেকেও নিজ গ্রামের মানুষের প্রতি
+              তাদের ভালোবাসা এবং নিয়মিত আর্থিক সহযোগিতা আমাদের কার্যক্রমকে
+              বেগবান করছে। তারা আমাদের ফাউন্ডেশনের অবিচ্ছেদ্য অংশ।
+            </p>
+            <div class="flex flex-wrap gap-12">
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="flight_takeoff"
+                    >flight_takeoff</span
+                  >
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg">ওমান শাখা</h4>
+                  <p class="text-sm text-white/70">প্রবাসী সমন্বয় কমিটি</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="flight_land"
+                    >flight_land</span
+                  >
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg">কাতার শাখা</h4>
+                  <p class="text-sm text-white/70">প্রবাসী দাতা সদস্যবৃন্দ</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Income & Expenditure Policy -->
+      <section class="mb-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl text-dark">আয়-ব্যয়ের নীতিমালা</h2>
+        </div>
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap gap-6 justify-center mb-8">
+          <button
+            id="tab-btn-income"
+            onclick="switchPolicyTab('income')"
+            class="tab-policy-btn flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-all bg-primary/10 text-primary border border-primary/20"
+          >
+            <span class="material-symbols-outlined" style="font-size: 20px"
+              >receipt_long</span
+            >
+            আয়ের উৎস
+          </button>
+          <button
+            id="tab-btn-service"
+            onclick="switchPolicyTab('service')"
+            class="tab-policy-btn flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-all text-slate-600 hover:bg-slate-100 border border-transparent"
+          >
+            <span class="material-symbols-outlined" style="font-size: 20px"
+              >volunteer_activism</span
+            >
+            সেবামূলক ব্যয়
+          </button>
+          <button
+            id="tab-btn-management"
+            onclick="switchPolicyTab('management')"
+            class="tab-policy-btn flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-all text-slate-600 hover:bg-slate-100 border border-transparent"
+          >
+            <span class="material-symbols-outlined" style="font-size: 20px"
+              >manage_accounts</span
+            >
+            ব্যবস্থাপনা ব্যয়
+          </button>
+        </div>
+        <!-- Tab content -->
+        <div
+          class="bg-white rounded-2xl shadow-sm border border-slate-200 p-12"
+        >
+          <!-- Income -->
+          <div id="tab-content-income" class="tab-policy-content">
+            <ul class="space-y-6">
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >বিভিন্ন ব্যক্তি ও প্রতিষ্ঠান থেকে প্রাপ্ত স্বেচ্ছা অনুদান ও
+                  অর্থসহায়তা।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >সদস্য, সমর্থক ও শুভাকাঙ্ক্ষীদের এককালীন ও নিয়মিত
+                  অনুদান।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >ফাউন্ডেশনের যে কোনো প্রকল্পের জন্য সংগৃহীত অর্থ।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >সচ্ছল মুসলিমদের প্রদেয় যাকাত।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >ইফতার ও কুরবানীসহ বিশেষ বিশেষ খাতে উসুলকৃত অর্থ।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >ফাউন্ডেশনের বিভিন্ন অঙ্গপ্রতিষ্ঠানের আয়।</span
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Service Expenditure -->
+          <div id="tab-content-service" class="tab-policy-content hidden">
+            <ul class="space-y-6">
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >শিক্ষা সহায়তা প্রকল্পে ব্যয় — শিক্ষার্থীদের উপকরণ, বৃত্তি ও
+                  পাঠক্রম।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >বিনামূল্যে চিকিৎসা সেবা ও স্বাস্থ্য ক্যাম্প পরিচালনায়
+                  ব্যয়।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >দুর্যোগ ত্রাণ, পুনর্বাসন ও জরুরি সহায়তায় ব্যয়।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >শীতবস্ত্র, খাদ্য ও নিত্যপ্রয়োজনীয় সামগ্রী বিতরণে
+                  ব্যয়।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >দরিদ্র পরিবার ও অসহায় ব্যক্তিদের সরাসরি আর্থিক সহায়তায়
+                  ব্যয়।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >যাকাত ও বিশেষ তহবিল থেকে প্রাপ্ত অর্থ নির্দিষ্ট খাতে সরাসরি
+                  বিতরণ।</span
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Management Expenditure -->
+          <div id="tab-content-management" class="tab-policy-content hidden">
+            <ul class="space-y-6">
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >সংগঠনের প্রশাসনিক কার্যক্রম পরিচালনায় ন্যূনতম ব্যয়।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800">অফিস পরিচালনা ও যোগাযোগ খরচ।</span>
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >স্বেচ্ছাসেবক প্রশিক্ষণ ও সক্ষমতা উন্নয়নে ব্যয়।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >ওয়েবসাইট, সোশ্যাল মিডিয়া ও ডিজিটাল যোগাযোগ ব্যয়।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >আর্থিক নিরীক্ষা ও স্বচ্ছতা নিশ্চিতকরণ খরচ।</span
+                >
+              </li>
+              <li class="flex items-start gap-6">
+                <span
+                  class="material-symbols-outlined text-primary shrink-0"
+                  style="
+                    font-variation-settings:
+                      &quot;FILL&quot; 1,
+                      &quot;wght&quot; 400,
+                      &quot;GRAD&quot; 0,
+                      &quot;opsz&quot; 24;
+                  "
+                  >check_circle</span
+                >
+                <span class="text-slate-800"
+                  >বার্ষিক প্রতিবেদন প্রকাশ ও সভা আয়োজন ব্যয়।</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- BEGIN: CTA Section -->
+      <section class="relative rounded-3xl overflow-hidden">
+        <div class="absolute inset-0">
+          <img
+            alt="মানবিক সেবায় স্বেচ্ছাসেবকরা"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4vf_UslKoWhF41diaXK9LCGkIyFOBuZEuJPgQ7u7p-SW3GGJGGzYpe8OaXoNPLKnI6v2lWr7q6OhkhdVhV6Fdx5JZsmZVnnzUKIbAppNd9SVy5ov_YuzE57Z8AoG3p8WJQpHzzfHpwnp_0YM_WMPq3vQObSfiRR_vr3NCp-_3YLPTqvil0w9iFoJBW2oSFoS94l89LFEwX9A4GQKbN2kvA_5IcMYT0sbIBnl7FgOHyFkANbKcNDGsmDtYnRWwF5X85Faa-YUX9beG"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/70 to-transparent"></div>
+        </div>
+        <div class="relative z-10 px-8 md:px-16 py-16 md:py-24 max-w-2xl">
+          <span class="text-secondary uppercase text-sm font-semibold tracking-widest mb-4 block">মানবতার ডাকে সাড়া দিন</span>
+          <h2 class="text-white text-3xl md:text-4xl font-bold mb-4">আপনার একটি দান বদলে দিতে পারে একজনের জীবন</h2>
+          <p class="text-white/80 text-lg mb-8">আজই আমাদের সাথে যুক্ত হোন এবং বেতাগীর অসহায় মানুষের পাশে দাঁড়ান।</p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition shadow-md"
+              href="#"
+              >সরাসরি দান করুন</a
+            >
+            <a
+              class="bg-transparent text-white border border-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-white hover:text-dark transition"
+              href="#"
+              >স্বেচ্ছাসেবী হিসেবে যোগ দিন</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- END: CTA Section -->
+    </main>
+    <!-- BEGIN: Footer -->
+    <footer class="bg-dark text-slate-400 pt-20 pb-10">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-slate-800 pb-16"
+      >
+        <!-- Col 1: About -->
+        <div>
+          <div class="flex items-center gap-2 mb-6">
+            <img
+              alt="Footer Logo"
+              class="h-12 w-auto rounded-full"
+              src="assets/images/logo-betagimanobikfoundation.jpg"
+            />
+            <div>
+              <span class="text-white text-xl font-bold block leading-tight"
+                >বেতাগী মানবিক</span
+              >
+              <span class="text-slate-400 text-sm block">ফাউন্ডেশন</span>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-6">
+            আমরা বিশ্বাস করি মানবতার সেবা সর্বোত্তম সেবা। বেতাগী উপজেলা সহ সারা
+            দেশে অসহায় মানুষের কল্যাণে আমরা অঙ্গীকারবদ্ধ।
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="bg-slate-800 p-2 rounded-full hover:bg-primary transition text-white"
+              href="#"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                ></path></svg
+            ></a>
+            <a
+              class="bg-slate-800 p-2 rounded-full hover:bg-primary transition text-white"
+              href="#"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16.4a4.4 4.4 0 110-8.8 4.4 4.4 0 010 8.8zm6.487-11.59a1.108 1.108 0 11-2.216 0 1.108 1.108 0 012.216 0z"
+                ></path></svg
+            ></a>
+            <a
+              class="bg-slate-800 p-2 rounded-full hover:bg-primary transition text-white"
+              href="#"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                ></path></svg
+            ></a>
+          </div>
+        </div>
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4
+            class="text-white font-bold text-lg mb-6 border-l-4 border-primary pl-4"
+          >
+            লিংকসমূহ
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li class="">
+              <a class="hover:text-primary transition" href="#"
+                >আমাদের সম্পর্কে</a
+              >
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#"
+                >সাফল্যের গল্প</a
+              >
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#">ব্লগ ও নিউজ</a>
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#">ফটো গ্যালারি</a>
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#">ক্যারিয়ার</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Col 3: Support -->
+        <div>
+          <h4
+            class="text-white font-bold text-lg mb-6 border-l-4 border-primary pl-4"
+          >
+            সহায়তা
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li class="">
+              <a class="hover:text-primary transition" href="#">দান করুন</a>
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#"
+                >স্বেচ্ছাসেবক হোন</a
+              >
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#">প্রশ্নোত্তর</a>
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#"
+                >গোপনীয়তা নীতি</a
+              >
+            </li>
+            <li class="">
+              <a class="hover:text-primary transition" href="#"
+                >ব্যবহারের শর্তাবলি</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Col 4: Contact -->
+        <div>
+          <h4
+            class="text-white font-bold text-lg mb-6 border-l-4 border-primary pl-4"
+          >
+            যোগাযোগ
+          </h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-primary shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+                <path
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              <span class="">বেতাগী পৌরসভা, বেতাগী, বরগুনা।</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg
+                class="w-5 h-5 text-primary shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              <span class="">+৮৮০১৭১২-৩৪৫৬৭৮</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg
+                class="w-5 h-5 text-primary shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              <span class="">info@betagimanobik.org</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 mt-10 text-center text-xs">
+        <p class="">© ২০২৪ বেতাগী মানবিক ফাউন্ডেশন। সর্বস্বত্ব সংরক্ষিত।</p>
+      </div>
+    </footer>
+    <!-- END: Footer -->
+    <script>
+      // Micro-interactions
+      document.querySelectorAll("button, a").forEach((el) => {
+        el.addEventListener("mousedown", () => {
+          el.style.transform = "scale(0.98)";
+        });
+        el.addEventListener("mouseup", () => {
+          el.style.transform = "scale(1)";
+        });
+      });
+
+      // Income-Expenditure Policy tabs
+      function switchPolicyTab(tab) {
+        document
+          .querySelectorAll(".tab-policy-content")
+          .forEach((el) => el.classList.add("hidden"));
+        document.querySelectorAll(".tab-policy-btn").forEach((el) => {
+          el.classList.remove(
+            "bg-primary/10",
+            "text-primary",
+            "border-primary/20",
+          );
+          el.classList.add("text-slate-600", "border-transparent");
+        });
+        document
+          .getElementById("tab-content-" + tab)
+          .classList.remove("hidden");
+        const btn = document.getElementById("tab-btn-" + tab);
+        btn.classList.add("bg-primary/10", "text-primary", "border-primary/20");
+        btn.classList.remove("text-slate-600", "border-transparent");
+      }
+
+      // Sticky Header Effect
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        if (window.scrollY > 20) {
+          header.classList.add("shadow-md");
+          header.classList.remove("shadow-sm");
+        } else {
+          header.classList.add("shadow-sm");
+          header.classList.remove("shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>
