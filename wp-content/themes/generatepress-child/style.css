@@ -65,7 +65,7 @@ img { max-width: 100%; height: auto; }
 
 .bmf-logo__img,
 .bmf-logo .custom-logo {
-	height: 56px;
+	height: 3.5rem; /* h-14 */
 	width: auto;
 }
 

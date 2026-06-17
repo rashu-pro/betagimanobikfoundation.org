@@ -73,3 +73,37 @@ add_action( 'wp_enqueue_scripts', function() {
         true
     );
 });
+
+
+// -----------------------------------------------
+// 5. Tailwind CDN — development only
+//    Replace with CLI build before going to production
+// -----------------------------------------------
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_script(
+        'tailwindcss',
+        'https://cdn.tailwindcss.com',
+        [],
+        null,
+        false // must load in <head> — not footer
+    );
+
+    wp_add_inline_script( 'tailwindcss', '
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary:        "#008e48",
+                "primary-dark": "#0a251c",
+                "primary-light":"#E8F5F1",
+                accent:         "#fbbd08",
+                "accent-light": "#FFF8E1",
+            },
+            fontFamily: {
+                bangla: ["Hind Siliguri", "sans-serif"],
+            },
+        },
+    },
+}
+    ', 'after' );
+});
