@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 // -----------------------------------------------
-// 3. Add theme support
+// 3. Add theme support + load text domain
 // -----------------------------------------------
 add_action( 'after_setup_theme', function() {
     add_theme_support( 'title-tag' );
@@ -37,4 +37,22 @@ add_action( 'after_setup_theme', function() {
         'search-form', 'comment-form',
         'comment-list', 'gallery', 'caption',
     ]);
+
+    load_child_theme_textdomain(
+        'generatepress-child',
+        get_stylesheet_directory() . '/languages'
+    );
+});
+
+
+// -----------------------------------------------
+// 4. Enqueue Hind Siliguri (Bangla font)
+// -----------------------------------------------
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_style(
+        'hind-siliguri',
+        'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap',
+        [],
+        null
+    );
 });
