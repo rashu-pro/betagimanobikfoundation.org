@@ -95,5 +95,33 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 		],
 	];
 
+	// ── Video section ──
+	$meta_boxes[] = [
+		'title'   => esc_html__( 'হোম পৃষ্ঠা — ভিডিও', 'generatepress-child' ),
+		'id'      => 'bmf_home_video',
+		'pages'   => [ 'page' ],
+		'include' => [
+			'is_template' => 'templates/page-home.php',
+		],
+		'fields'  => [
+			[
+				'id'          => 'bmf_video_url',
+				'type'        => 'url',
+				'name'        => esc_html__( 'ইউটিউব ভিডিও লিংক', 'generatepress-child' ),
+				'desc'        => esc_html__( 'ফাঁকা রাখলে ভিডিও সেকশন দেখাবে না।', 'generatepress-child' ),
+				'placeholder' => 'https://www.youtube.com/watch?v=...',
+			],
+			[
+				'id'           => 'bmf_video_thumbnail',
+				'type'         => 'single_image',
+				'name'         => esc_html__( 'কাস্টম থাম্বনেইল (ঐচ্ছিক)', 'generatepress-child' ),
+				'desc'         => esc_html__( 'না দিলে ইউটিউবের নিজস্ব থাম্বনেইল ব্যবহার হবে।', 'generatepress-child' ),
+				'force_delete' => false,
+				'image_size'   => 'large',
+				'return_value' => 'url',
+			],
+		],
+	];
+
 	return $meta_boxes;
 } );
