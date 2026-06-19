@@ -48,15 +48,18 @@
 
 | Role | Font | Source |
 |---|---|---|
-| Primary (Bangla + Latin) | Hind Siliguri | Google Fonts |
+| Primary (Latin) | Ubuntu Sans | Google Fonts |
+| Primary (Bangla) | Bornomala | Local / system fallback |
 | Fallback | sans-serif | System |
+
+`font-family: UbuntuSans, Bornomala, sans-serif;`
 
 ### Google Fonts Import
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 ```
 
 Or enqueue in `functions.php`:
@@ -64,8 +67,8 @@ Or enqueue in `functions.php`:
 ```php
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
-        'hind-siliguri',
-        'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap',
+        'ubuntu-sans',
+        'https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap',
         [],
         null
     );
@@ -205,7 +208,7 @@ function switchTab(tab) {
   color: #fff;
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-md);
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: UbuntuSans, Bornomala, sans-serif;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -220,7 +223,7 @@ function switchTab(tab) {
   color: var(--color-primary-dark);
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-md);
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: UbuntuSans, Bornomala, sans-serif;
   font-weight: 700;
   border: none;
   cursor: pointer;
@@ -233,7 +236,7 @@ function switchTab(tab) {
   border: 2px solid var(--color-primary);
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-md);
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: UbuntuSans, Bornomala, sans-serif;
   font-weight: 600;
   cursor: pointer;
 }
@@ -320,7 +323,7 @@ Consistent across all page hero sections.
 
 ## Bangla Typography Notes
 
-- Always use `font-family: 'Hind Siliguri', sans-serif`
+- Always use `font-family: UbuntuSans, Bornomala, sans-serif`
 - Set `line-height: 1.7` for body — Bangla conjuncts need more vertical space
 - Avoid `letter-spacing` on Bangla text — breaks conjunct characters
 - Avoid `text-transform` — has no effect on Bangla but can break mixed content

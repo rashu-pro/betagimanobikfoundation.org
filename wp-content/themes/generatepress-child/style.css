@@ -16,11 +16,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  border-style: solid;
 }
 
 body {
   margin: 0;
-  font-family: "Ubuntu", "Hind Siliguri", sans-serif;
+  font-family: UbuntuSans, Bornomala, sans-serif;
   color: #1a1a1a;
   background: #f9fafb;
   line-height: 1.7;
@@ -33,6 +34,38 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* =============================================
+   Footer section headings — left accent border
+   ============================================= */
+
+.bmf-footer-heading {
+  border-left: 4px solid #008e48;
+  padding-left: 1rem;
+}
+
+/* =============================================
+   Footer nav menus
+   (wp_nav_menu output — li/a don't get Tailwind classes
+    without a custom walker)
+   ============================================= */
+
+.bmf-footer-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bmf-footer-nav > li > a {
+  color: #94a3b8; /* slate-400 */
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bmf-footer-nav > li > a:hover {
+  color: #008e48; /* primary */
 }
 
 /* =============================================
@@ -82,8 +115,13 @@ img {
    ============================================= */
 
 .custom-logo {
-  height: 3.5rem; /* h-14 */
+  height: 3.5rem; /* h-14 — header size */
   width: auto;
+}
+
+footer .custom-logo {
+  height: 3rem;    /* h-12 — footer size */
+  border-radius: 9999px; /* rounded-full */
 }
 
 /* =============================================

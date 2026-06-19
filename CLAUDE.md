@@ -22,7 +22,7 @@ Pages are designed in Stitch + Claude and implemented using a GeneratePress chil
 | Custom Fields       | Meta Box 5.12.1 (`plugins/meta-box/`)          |
 | Design Tool         | Stitch + Claude                                |
 | UI Language         | Bangla (bn-BD)                                 |
-| Font                | Hind Siliguri (Google Fonts)                   |
+| Font                | Ubuntu Sans (Google Fonts) + Bornomala         |
 | Primary Brand Color | `#008e48`                                      |
 | Dark Brand Color    | `#0a251c`                                      |
 | Accent Color        | `#fbbd08`                                      |
@@ -53,7 +53,7 @@ wp-content/themes/generatepress-child/
 - All field IDs are prefixed with `bmf_` (e.g. `bmf_hero_title`)
 - Use `rwmb_meta()` to retrieve Meta Box fields in templates
 - Custom CSS goes in `style.css` — never inline
-- Bangla text always uses **Hind Siliguri** from Google Fonts
+- All text uses `font-family: UbuntuSans, Bornomala, sans-serif` — Ubuntu Sans loaded from Google Fonts, Bornomala as Bangla fallback
 - Do NOT edit parent GeneratePress theme files directly
 - Do NOT use Elementor or any page builder
 - Do NOT use inline styles for brand colors
@@ -135,7 +135,7 @@ _(Add new pages here as they are built)_
 - **Primary:** `#008e48`
 - **Dark:** `#0a251c`
 - **Accent (gold):** `#fbbd08`
-- **Font:** Hind Siliguri, sans-serif
+- **Font:** UbuntuSans, Bornomala, sans-serif
 - **Tab/Nav active color:** `#008e48`
 - **About Us page:** Single-scroll layout; only the Income-Expenditure Policy section has tabs (3 JS tabs, not URL-param routed)
 

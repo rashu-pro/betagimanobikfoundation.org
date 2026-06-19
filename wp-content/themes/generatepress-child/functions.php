@@ -49,7 +49,9 @@ add_action( 'after_setup_theme', function() {
     );
 
     register_nav_menus( [
-        'primary' => esc_html__( 'প্রধান মেনু', 'generatepress-child' ),
+        'primary'        => esc_html__( 'প্রধান মেনু', 'generatepress-child' ),
+        'footer-links'   => esc_html__( 'ফুটার লিংকসমূহ', 'generatepress-child' ),
+        'footer-support' => esc_html__( 'ফুটার সহায়তা', 'generatepress-child' ),
     ] );
 });
 
@@ -59,8 +61,8 @@ add_action( 'after_setup_theme', function() {
 // -----------------------------------------------
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style(
-        'hind-siliguri',
-        'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap',
+        'ubuntu-sans',
+        'https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap',
         [],
         null
     );
@@ -143,10 +145,84 @@ tailwind.config = {
                 "accent-light": "#FFF8E1",
             },
             fontFamily: {
-                bangla: ["Hind Siliguri", "sans-serif"],
+                bangla: ["UbuntuSans", "Bornomala", "sans-serif"],
             },
         },
     },
 }
     ', 'after' );
 });
+
+
+// -----------------------------------------------
+// 7. Customizer — footer settings
+// -----------------------------------------------
+add_action( 'customize_register', function( WP_Customize_Manager $wp_customize ) {
+
+    $wp_customize->add_section( 'bmf_footer', [
+        'title'    => esc_html__( 'ফুটার', 'generatepress-child' ),
+        'priority' => 130,
+    ] );
+
+    // About / mission paragraph
+    $wp_customize->add_setting( 'bmf_footer_about', [
+        'default'           => 'আমরা বিশ্বাস করি মানবতার সেবা সর্বোত্তম সেবা। বেতাগী উপজেলা সহ সারা দেশে অসহায় মানুষের কল্যাণে আমরা অঙ্গীকারবদ্ধ।',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ] );
+    $wp_customize->add_control( 'bmf_footer_about', [
+        'type'    => 'textarea',
+        'section' => 'bmf_footer',
+        'label'   => esc_html__( 'সংক্ষিপ্ত পরিচয়', 'generatepress-child' ),
+    ] );
+
+    // Social URLs
+    $social_fields = [
+        'bmf_footer_facebook'  => 'ফেসবুক লিংক',
+        'bmf_footer_instagram' => 'ইন্সটাগ্রাম লিংক',
+        'bmf_footer_youtube'   => 'ইউটিউব লিংক',
+    ];
+    foreach ( $social_fields as $key => $label ) {
+        $wp_customize->add_setting( $key, [
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ] );
+        $wp_customize->add_control( $key, [
+            'type'    => 'url',
+            'section' => 'bmf_footer',
+            'label'   => esc_html__( $label, 'generatepress-child' ),
+        ] );
+    }
+
+    // Contact: address
+    $wp_customize->add_setting( 'bmf_footer_address', [
+        'default'           => 'বেতাগী পৌরসভা, বেতাগী, বরগুনা।',
+        'sanitize_callback' => 'sanitize_text_field',
+    ] );
+    $wp_customize->add_control( 'bmf_footer_address', [
+        'type'    => 'text',
+        'section' => 'bmf_footer',
+        'label'   => esc_html__( 'ঠিকানা', 'generatepress-child' ),
+    ] );
+
+    // Contact: phone
+    $wp_customize->add_setting( 'bmf_footer_phone', [
+        'default'           => '+৮৮০১৭১২-৩৪৫৬৭৮',
+        'sanitize_callback' => 'sanitize_text_field',
+    ] );
+    $wp_customize->add_control( 'bmf_footer_phone', [
+        'type'    => 'text',
+        'section' => 'bmf_footer',
+        'label'   => esc_html__( 'ফোন নম্বর', 'generatepress-child' ),
+    ] );
+
+    // Contact: email
+    $wp_customize->add_setting( 'bmf_footer_email', [
+        'default'           => 'info@betagimanobik.org',
+        'sanitize_callback' => 'sanitize_email',
+    ] );
+    $wp_customize->add_control( 'bmf_footer_email', [
+        'type'    => 'email',
+        'section' => 'bmf_footer',
+        'label'   => esc_html__( 'ইমেইল', 'generatepress-child' ),
+    ] );
+} );

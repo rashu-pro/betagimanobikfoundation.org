@@ -112,7 +112,7 @@ Each field file follows the pattern in `docs/META-BOX-FIELDS.md`.
 
 - Permalink structure: `/%postname%/` (post name)
 - `lang` attribute on `<html>`: `bn` (set in blank.php template)
-- Hind Siliguri font enqueued globally via `functions.php`
+- Ubuntu Sans (Google Fonts) + Bornomala font stack enqueued globally via `functions.php`
 - No page builder plugins — layout is entirely template-driven
 
 ---
@@ -125,7 +125,7 @@ Each field file follows the pattern in `docs/META-BOX-FIELDS.md`.
 | Blank canvas template for custom pages | Prevents GP default styles conflicting with Stitch designs |
 | Meta Box over ACF | Lighter, no bloat, code-first field registration |
 | `bmf_` field prefix | Avoids collisions with plugins, clearly namespaced |
-| Hind Siliguri font | Best Bangla rendering + Latin fallback in one font |
+| Ubuntu Sans + Bornomala font stack | Ubuntu Sans for Latin, Bornomala for Bangla script |
 | URL param tab routing | Enables deep-linking to specific tabs without JS router |
 
 ---
