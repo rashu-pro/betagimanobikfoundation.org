@@ -229,7 +229,14 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
 
 
 // -----------------------------------------------
-// 8. Load Meta Box field group registrations
+// 8. Load Custom Post Type registrations
+// -----------------------------------------------
+foreach ( glob( get_stylesheet_directory() . '/inc/post-types/*.php' ) as $file ) {
+    require_once $file;
+}
+
+// -----------------------------------------------
+// 9. Load Meta Box field group registrations
 // -----------------------------------------------
 foreach ( glob( get_stylesheet_directory() . '/inc/meta-boxes/*.php' ) as $file ) {
     require_once $file;
