@@ -40,7 +40,7 @@ $bg_style = $hero_image ? '--hero-bg: url(\'' . esc_url( $hero_image['sizes']['l
 				<?php if ( $cta_text ) : ?>
 					<a
 						href="<?php echo esc_url( $cta_url ?: '#' ); ?>"
-						class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition"
+						class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 hover:text-white transition"
 					>
 						<?php echo esc_html( $cta_text ); ?>
 					</a>

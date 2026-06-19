@@ -103,6 +103,21 @@ img {
   color: #ffffff !important;
 }
 
+/* GP injects a:hover,a:focus,a:active { color: var(--contrast) } as inline CSS (high
+   cascade order). This reclaims hover text color for all Tailwind-classed buttons
+   in the content area. The colon in Tailwind class names must be escaped in CSS. */
+a.hover\:text-white:hover,
+a.hover\:text-white:focus,
+a.hover\:text-white:active {
+  color: #ffffff !important;
+}
+
+a.hover\:text-primary:hover,
+a.hover\:text-primary:focus,
+a.hover\:text-primary:active {
+  color: #008e48 !important;
+}
+
 /* Deeper shadow on scroll (JS adds .is-scrolled) */
 #bmf-header.is-scrolled {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);

@@ -71,7 +71,7 @@ if ( ! $funds_query->have_posts() ) {
 
 					<a
 						href="<?php echo esc_url( $button_url ); ?>"
-						class="block w-full text-center bg-primary text-white py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition mt-auto"
+						class="block w-full text-center bg-primary text-white py-3 rounded-lg font-semibold text-base hover:bg-green-800 hover:text-white transition mt-auto"
 					>
 						<?php esc_html_e( 'দান করুন', 'generatepress-child' ); ?>
 					</a>
