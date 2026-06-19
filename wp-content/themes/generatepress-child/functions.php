@@ -20,7 +20,7 @@ add_action( 'wp_enqueue_scripts', function() {
 //    on custom blank page templates
 // -----------------------------------------------
 add_action( 'wp_enqueue_scripts', function() {
-    if ( is_page_template( 'templates/blank.php' ) ) {
+    if ( is_page_template( [ 'templates/blank.php', 'templates/page-home.php' ] ) ) {
         wp_dequeue_style( 'generate-style' );
         wp_dequeue_script( 'generate-menu' );
     }
@@ -226,3 +226,11 @@ add_action( 'customize_register', function( WP_Customize_Manager $wp_customize )
         'label'   => esc_html__( 'ইমেইল', 'generatepress-child' ),
     ] );
 } );
+
+
+// -----------------------------------------------
+// 8. Load Meta Box field group registrations
+// -----------------------------------------------
+foreach ( glob( get_stylesheet_directory() . '/inc/meta-boxes/*.php' ) as $file ) {
+    require_once $file;
+}

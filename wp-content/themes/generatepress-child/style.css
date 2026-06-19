@@ -178,3 +178,15 @@ footer .custom-logo {
   color: #008e48;
   font-weight: 600;
 }
+
+/* =============================================
+   Home page hero section
+   ============================================= */
+
+/* Gradient overlay + dynamic background image.
+   --hero-bg is set via inline style from the Meta Box image field. */
+.hero-gradient {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    var(--hero-bg, none) center / cover no-repeat;
+}
