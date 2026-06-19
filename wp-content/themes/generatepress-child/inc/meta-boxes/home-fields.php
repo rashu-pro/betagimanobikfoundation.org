@@ -57,6 +57,41 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 				'name' => esc_html__( 'দ্বিতীয় বাটন লিঙ্ক', 'generatepress-child' ),
 				'desc' => esc_html__( 'ঐচ্ছিক', 'generatepress-child' ),
 			],
+
+			// ── Services section (3 fixed cards, icons hardcoded per position) ──
+			[
+				'id'   => 'bmf_service_1_title',
+				'type' => 'text',
+				'name' => esc_html__( 'সেবা ১ — শিরোনাম (শিক্ষা)', 'generatepress-child' ),
+			],
+			[
+				'id'   => 'bmf_service_1_desc',
+				'type' => 'textarea',
+				'name' => esc_html__( 'সেবা ১ — বিবরণ', 'generatepress-child' ),
+				'rows' => 2,
+			],
+			[
+				'id'   => 'bmf_service_2_title',
+				'type' => 'text',
+				'name' => esc_html__( 'সেবা ২ — শিরোনাম (স্বাবলম্বীকরণ)', 'generatepress-child' ),
+			],
+			[
+				'id'   => 'bmf_service_2_desc',
+				'type' => 'textarea',
+				'name' => esc_html__( 'সেবা ২ — বিবরণ', 'generatepress-child' ),
+				'rows' => 2,
+			],
+			[
+				'id'   => 'bmf_service_3_title',
+				'type' => 'text',
+				'name' => esc_html__( 'সেবা ৩ — শিরোনাম (দুর্যোগ ত্রাণ)', 'generatepress-child' ),
+			],
+			[
+				'id'   => 'bmf_service_3_desc',
+				'type' => 'textarea',
+				'name' => esc_html__( 'সেবা ৩ — বিবরণ', 'generatepress-child' ),
+				'rows' => 2,
+			],
 		],
 	];
 
