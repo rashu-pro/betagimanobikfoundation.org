@@ -13,5 +13,6 @@ get_template_part( 'template-parts/home/services' );
 get_template_part( 'template-parts/home/activities' );
 get_template_part( 'template-parts/home/funds' );
 get_template_part( 'template-parts/home/video' );
+get_template_part( 'template-parts/home/gallery' );
 
 get_footer();

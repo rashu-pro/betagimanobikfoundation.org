@@ -123,5 +123,32 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 		],
 	];
 
+	// ── Gallery section ──
+	$meta_boxes[] = [
+		'title'   => esc_html__( 'হোম পৃষ্ঠা — গ্যালারি', 'generatepress-child' ),
+		'id'      => 'bmf_home_gallery',
+		'pages'   => [ 'page' ],
+		'include' => [
+			'is_template' => 'templates/page-home.php',
+		],
+		'fields'  => [
+			[
+				'id'           => 'bmf_gallery_images',
+				'type'         => 'image_advanced',
+				'name'         => esc_html__( 'গ্যালারি ছবিসমূহ', 'generatepress-child' ),
+				'desc'         => esc_html__( 'সর্বোচ্চ ৬টি ছবি দেখানো হবে।', 'generatepress-child' ),
+				'force_delete' => false,
+				'image_size'   => 'large',
+			],
+			[
+				'id'          => 'bmf_gallery_link',
+				'type'        => 'url',
+				'name'        => esc_html__( '"আরও ছবি দেখুন" লিংক (ঐচ্ছিক)', 'generatepress-child' ),
+				'desc'        => esc_html__( 'ফাঁকা রাখলে বাটন দেখাবে না।', 'generatepress-child' ),
+				'placeholder' => home_url( '/gallery' ),
+			],
+		],
+	];
+
 	return $meta_boxes;
 } );
