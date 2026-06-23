@@ -268,3 +268,110 @@ footer .custom-logo {
 }
 .bmf-lightbox__prev { left: 1.25rem; }
 .bmf-lightbox__next { right: 1.25rem; }
+
+/* =============================================
+   Blog Post Content (.bmf-post-content)
+   ============================================= */
+
+.bmf-post-content {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #374151;
+}
+.bmf-post-content h2,
+.bmf-post-content h3,
+.bmf-post-content h4 {
+  color: #0a251c;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+.bmf-post-content h2 { font-size: 1.5rem; }
+.bmf-post-content h3 { font-size: 1.25rem; }
+.bmf-post-content h4 { font-size: 1.1rem; }
+.bmf-post-content p  { margin-bottom: 1.25rem; }
+.bmf-post-content a {
+  color: #008e48;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bmf-post-content a:hover { color: #0a251c; }
+.bmf-post-content ul,
+.bmf-post-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.bmf-post-content ul { list-style-type: disc; }
+.bmf-post-content ol { list-style-type: decimal; }
+.bmf-post-content li { margin-bottom: 0.4rem; }
+.bmf-post-content blockquote {
+  border-left: 4px solid #008e48;
+  background: #E8F5F1;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #0a251c;
+  font-style: italic;
+}
+.bmf-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+}
+.bmf-post-content hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+.bmf-post-content pre,
+.bmf-post-content code {
+  background: #f3f4f6;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+.bmf-post-content pre  { padding: 1rem; overflow-x: auto; }
+.bmf-post-content code { padding: 0.15rem 0.4rem; }
+
+/* =============================================
+   Blog Archive Pagination (.bmf-pagination)
+   ============================================= */
+
+.bmf-pagination .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.bmf-pagination .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  background: #fff;
+}
+.bmf-pagination .page-numbers:hover {
+  border-color: #008e48;
+  color: #008e48;
+}
+.bmf-pagination .page-numbers.current {
+  background: #008e48;
+  border-color: #008e48;
+  color: #fff;
+}
+.bmf-pagination .page-numbers.dots {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+}
