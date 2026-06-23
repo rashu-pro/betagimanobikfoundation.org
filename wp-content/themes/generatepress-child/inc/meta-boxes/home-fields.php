@@ -9,12 +9,9 @@
 add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 
 	$meta_boxes[] = [
-		'title'   => esc_html__( 'হোম পৃষ্ঠা — হিরো', 'generatepress-child' ),
-		'id'      => 'bmf_home',
-		'pages'   => [ 'page' ],
-		'include' => [
-			'is_template' => 'templates/page-home.php',
-		],
+		'title'  => esc_html__( 'হোম পৃষ্ঠা — হিরো', 'generatepress-child' ),
+		'id'     => 'bmf_home',
+		'pages'  => [ 'page' ],
 		'fields'  => [
 			[
 				'id'   => 'bmf_hero_title',
@@ -97,12 +94,9 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 
 	// ── Video section ──
 	$meta_boxes[] = [
-		'title'   => esc_html__( 'হোম পৃষ্ঠা — ভিডিও', 'generatepress-child' ),
-		'id'      => 'bmf_home_video',
-		'pages'   => [ 'page' ],
-		'include' => [
-			'is_template' => 'templates/page-home.php',
-		],
+		'title'  => esc_html__( 'হোম পৃষ্ঠা — ভিডিও', 'generatepress-child' ),
+		'id'     => 'bmf_home_video',
+		'pages'  => [ 'page' ],
 		'fields'  => [
 			[
 				'id'          => 'bmf_video_url',
@@ -125,12 +119,9 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 
 	// ── Gallery section ──
 	$meta_boxes[] = [
-		'title'   => esc_html__( 'হোম পৃষ্ঠা — গ্যালারি', 'generatepress-child' ),
-		'id'      => 'bmf_home_gallery',
-		'pages'   => [ 'page' ],
-		'include' => [
-			'is_template' => 'templates/page-home.php',
-		],
+		'title'  => esc_html__( 'হোম পৃষ্ঠা — গ্যালারি', 'generatepress-child' ),
+		'id'     => 'bmf_home_gallery',
+		'pages'  => [ 'page' ],
 		'fields'  => [
 			[
 				'id'           => 'bmf_gallery_images',
@@ -152,3 +143,12 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 
 	return $meta_boxes;
 } );
+
+// Hide home meta boxes on any page that does not use the Home page template.
+add_action( 'add_meta_boxes_page', function( WP_Post $post ) {
+	if ( get_page_template_slug( $post->ID ) !== 'templates/page-home.php' ) {
+		remove_meta_box( 'bmf_home',         'page', 'normal' );
+		remove_meta_box( 'bmf_home_video',   'page', 'normal' );
+		remove_meta_box( 'bmf_home_gallery', 'page', 'normal' );
+	}
+}, 20 );
