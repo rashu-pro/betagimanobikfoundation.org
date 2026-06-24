@@ -67,6 +67,13 @@ add_action( 'wp_enqueue_scripts', function() {
         null
     );
 
+    wp_enqueue_style(
+        'material-symbols',
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap',
+        [],
+        null
+    );
+
     wp_enqueue_script(
         'bmf-nav',
         get_stylesheet_directory_uri() . '/assets/js/nav.js',
@@ -142,6 +149,7 @@ tailwind.config = {
                 "primary-dark": "#0a251c",
                 "primary-light":"#E8F5F1",
                 accent:         "#fbbd08",
+                secondary:      "#fbbd08",
                 "accent-light": "#FFF8E1",
             },
             fontFamily: {

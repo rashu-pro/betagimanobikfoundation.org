@@ -375,3 +375,101 @@ footer .custom-logo {
   background: transparent;
   color: #9ca3af;
 }
+
+/* =============================================
+   Donate page — Bento card
+   ============================================= */
+
+.bento-card {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================
+   Donate page — Contact Form 7 overrides
+   ============================================= */
+
+.wpcf7-form p {
+  margin: 0;
+}
+
+.wpcf7-form .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="number"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form select,
+.wpcf7-form textarea {
+  width: 100%;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-family: UbuntuSans, Bornomala, sans-serif;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: border-color 0.15s ease;
+}
+
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="number"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form select:focus,
+.wpcf7-form textarea:focus {
+  outline: none;
+  border-color: #008e48;
+  box-shadow: 0 0 0 3px rgba(0, 142, 72, 0.15);
+}
+
+.wpcf7-form input[type="submit"] {
+  width: 100%;
+  background: #008e48;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: UbuntuSans, Bornomala, sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+  background: #166534;
+}
+
+.wpcf7-response-output {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  border: none !important;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+  background: #E8F5F1;
+  color: #0a251c;
+  border-left: 4px solid #008e48 !important;
+}
+
+.wpcf7-form.failed .wpcf7-response-output,
+.wpcf7-form.invalid .wpcf7-response-output {
+  background: #fef2f2;
+  color: #7f1d1d;
+  border-left: 4px solid #dc2626 !important;
+}

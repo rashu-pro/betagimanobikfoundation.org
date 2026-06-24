@@ -45,7 +45,7 @@
 
 		<!-- Donate button + Hamburger -->
 		<div class="flex items-center gap-3">
-			<a href="<?php echo esc_url( home_url( '/donate' ) ); ?>"
+			<a href="<?php echo esc_url( home_url( '/donate-now' ) ); ?>"
 			   class="bmf-btn-donate bg-primary text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition shadow-lg">
 				<?php esc_html_e( 'দান করুন', 'generatepress-child' ); ?>
 			</a>
@@ -74,7 +74,7 @@
 			'fallback_cb'    => 'bmf_nav_fallback',
 			'depth'          => 1,
 		] ); ?>
-		<a href="<?php echo esc_url( home_url( '/donate' ) ); ?>"
+		<a href="<?php echo esc_url( home_url( '/donate-now' ) ); ?>"
 		   class="bmf-btn-donate bg-primary text-white block w-full text-center px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition shadow-lg mt-2">
 			<?php esc_html_e( 'দান করুন', 'generatepress-child' ); ?>
 		</a>
