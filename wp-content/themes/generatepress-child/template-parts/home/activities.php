@@ -11,9 +11,21 @@ $activities_query = new WP_Query( [
 	'post_type'      => 'project',
 	'posts_per_page' => 3,
 	'meta_query'     => [
+		'relation' => 'AND',
 		[
 			'key'   => 'bmf_project_featured',
 			'value' => '1',
+		],
+		[
+			'relation' => 'OR',
+			[
+				'key'   => 'bmf_project_status',
+				'value' => 'current',
+			],
+			[
+				'key'     => 'bmf_project_status',
+				'compare' => 'NOT EXISTS',
+			],
 		],
 	],
 ] );

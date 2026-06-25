@@ -12,6 +12,17 @@ add_filter( 'rwmb_meta_boxes', function( $meta_boxes ) {
 		'post_types' => [ 'project' ],
 		'fields'     => [
 			[
+				'id'      => 'bmf_project_status',
+				'type'    => 'select',
+				'name'    => esc_html__( 'অবস্থা', 'generatepress-child' ),
+				'desc'    => esc_html__( 'চলমান — হোমপেজে দেখানো যাবে। সম্পন্ন — বিগত কার্যক্রম পেজে দেখাবে।', 'generatepress-child' ),
+				'options' => [
+					'current' => esc_html__( 'চলমান', 'generatepress-child' ),
+					'past'    => esc_html__( 'সম্পন্ন', 'generatepress-child' ),
+				],
+				'std'     => 'current',
+			],
+			[
 				'id'   => 'bmf_project_featured',
 				'type' => 'checkbox',
 				'name' => esc_html__( 'হোমপেজে দেখাও', 'generatepress-child' ),

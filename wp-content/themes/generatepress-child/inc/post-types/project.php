@@ -34,3 +34,70 @@ add_action( 'init', function() {
 		'rewrite'             => [ 'slug' => 'project' ],
 	] );
 } );
+
+// Admin list: add "অবস্থা" column after the title column.
+add_filter( 'manage_project_posts_columns', function( $columns ) {
+	$new = [];
+	foreach ( $columns as $key => $label ) {
+		$new[ $key ] = $label;
+		if ( 'title' === $key ) {
+			$new['bmf_status'] = esc_html__( 'অবস্থা', 'generatepress-child' );
+		}
+	}
+	return $new;
+} );
+
+add_action( 'manage_project_posts_custom_column', function( $column, $post_id ) {
+	if ( 'bmf_status' !== $column ) {
+		return;
+	}
+	$status = get_post_meta( $post_id, 'bmf_project_status', true );
+	if ( 'past' === $status ) {
+		echo '<span class="bmf-status-badge bmf-status-past">' . esc_html__( 'সম্পন্ন', 'generatepress-child' ) . '</span>';
+	} else {
+		echo '<span class="bmf-status-badge bmf-status-current">' . esc_html__( 'চলমান', 'generatepress-child' ) . '</span>';
+	}
+}, 10, 2 );
+
+// Admin list: filter dropdown by status.
+add_action( 'restrict_manage_posts', function( $post_type ) {
+	if ( 'project' !== $post_type ) {
+		return;
+	}
+	$selected = isset( $_GET['bmf_project_status'] ) ? sanitize_key( $_GET['bmf_project_status'] ) : '';
+	?>
+	<select name="bmf_project_status">
+		<option value=""><?php esc_html_e( 'সব অবস্থা', 'generatepress-child' ); ?></option>
+		<option value="current" <?php selected( $selected, 'current' ); ?>><?php esc_html_e( 'চলমান', 'generatepress-child' ); ?></option>
+		<option value="past"    <?php selected( $selected, 'past'    ); ?>><?php esc_html_e( 'সম্পন্ন', 'generatepress-child' ); ?></option>
+	</select>
+	<?php
+} );
+
+add_filter( 'parse_query', function( WP_Query $query ) {
+	global $pagenow;
+	if (
+		! is_admin()
+		|| 'edit.php' !== $pagenow
+		|| ! $query->is_main_query()
+		|| 'project' !== ( $query->query['post_type'] ?? '' )
+		|| empty( $_GET['bmf_project_status'] )
+	) {
+		return;
+	}
+	$query->query_vars['meta_key']   = 'bmf_project_status';
+	$query->query_vars['meta_value'] = sanitize_key( $_GET['bmf_project_status'] );
+} );
+
+// Admin list: inline badge styles, scoped to the project list screen only.
+add_action( 'admin_head', function() {
+	$screen = get_current_screen();
+	if ( ! $screen || 'edit-project' !== $screen->id ) {
+		return;
+	}
+	echo '<style>
+	.bmf-status-badge { display:inline-block; padding:2px 10px; border-radius:9999px; font-size:12px; font-weight:600; }
+	.bmf-status-current { background:#E8F5F1; color:#008e48; }
+	.bmf-status-past    { background:#f1f5f9; color:#64748b; }
+	</style>';
+} );

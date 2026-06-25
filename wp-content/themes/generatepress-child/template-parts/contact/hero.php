@@ -14,7 +14,7 @@ if ( ! $hero_title ) {
 ?>
 
 <section class="text-center container mx-auto px-4 pt-12 pb-4 mb-8">
-	<h1 class="text-3xl md:text-5xl text-primary-dark mb-4 font-bold">
+	<h1 class="text-3xl md:text-5xl text-primary mb-4">
 		<?php echo esc_html( $hero_title ); ?>
 	</h1>
 	<?php if ( $hero_subtitle ) : ?>

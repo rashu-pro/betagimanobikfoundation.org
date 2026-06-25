@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>প্রশ্নোত্তর | বেতাগী মানবিক ফাউন্ডেশন</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#008e48",
+              secondary: "#fbbd08",
+              dark: "#0a251c",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.35s ease,
+          padding 0.35s ease;
+      }
+      .faq-item.open .faq-answer {
+        max-height: 500px;
+      }
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      .category-pill.active {
+        background: #008e48;
+        color: #ffffff;
+        border-color: #008e48;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+      <nav
+        class="container mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            alt="Betagi Manobik Foundation Logo"
+            class="h-14 w-auto"
+            src="assets/images/logo-betagimanobikfoundation.jpg"
+          />
+          <div class="hidden lg:block">
+            <span class="text-primary text-xl font-bold block leading-tight"
+              >বেতাগী মানবিক</span
+            >
+            <span class="text-slate-600 text-sm block">ফাউন্ডেশন</span>
+          </div>
+        </div>
+        <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
+          <li><a class="nav-link" href="home.html">হোম</a></li>
+          <li><a class="nav-link" href="about_us.html">আমাদের সম্পর্কে</a></li>
+          <li>
+            <a class="nav-link" href="our_works.html">আমাদের কার্যক্রম</a>
+          </li>
+          <li><a class="nav-link" href="#">সাফল্যের গল্প</a></li>
+          <li><a class="nav-link" href="#">ব্লগ</a></li>
+          <li><a class="nav-link" href="#">গ্যালারি</a></li>
+          <li><a class="nav-link" href="contact.html">যোগাযোগ</a></li>
+          <li><a class="nav-link text-primary" href="#">দান করুন</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <button
+            class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition shadow-lg"
+          >
+            দান করুন
+          </button>
+          <button class="lg:hidden text-primary p-2">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M4 6h16M4 12h16m-7 6h7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- END: MainHeader -->
+
+    <!-- Hero Section -->
+    <section class="mb-12 text-center pt-12 px-4">
+      <h1 class="text-3xl md:text-5xl text-primary mb-4">
+        প্রায়শই জিজ্ঞাসিত প্রশ্নসমূহ
+      </h1>
+      <p class="text-base text-slate-500 max-w-2xl mx-auto">
+        আমাদের সম্পর্কে আপনার মনে যত প্রশ্ন আছে, সেগুলোর উত্তর এখানে খুঁজে
+        পাবেন। না পেলে সরাসরি আমাদের সাথে যোগাযোগ করুন।
+      </p>
+    </section>
+
+    <main class="container mx-auto px-4 py-16">
+      <!-- Category Filter Pills -->
+      <div
+        class="flex flex-wrap justify-center gap-3 mb-12"
+        id="category-filters"
+      >
+        <button
+          class="category-pill active border border-primary text-primary font-semibold px-5 py-2 rounded-full text-sm transition"
+          data-category="all"
+        >
+          সবগুলো
+        </button>
+        <button
+          class="category-pill border border-slate-300 text-slate-600 font-semibold px-5 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition"
+          data-category="donation"
+        >
+          দান ও অনুদান
+        </button>
+        <button
+          class="category-pill border border-slate-300 text-slate-600 font-semibold px-5 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition"
+          data-category="activities"
+        >
+          কার্যক্রম
+        </button>
+        <button
+          class="category-pill border border-slate-300 text-slate-600 font-semibold px-5 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition"
+          data-category="volunteer"
+        >
+          স্বেচ্ছাসেবী
+        </button>
+        <button
+          class="category-pill border border-slate-300 text-slate-600 font-semibold px-5 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition"
+          data-category="contact"
+        >
+          যোগাযোগ
+        </button>
+      </div>
+
+      <!-- Two-column layout: FAQ list + sidebar -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <!-- FAQ Accordion List -->
+        <div class="lg:col-span-2 space-y-4" id="faq-list">
+          <!-- ── দান ও অনুদান ──────────────────────────────── -->
+          <p
+            class="text-xs font-bold uppercase tracking-widest text-slate-400 pt-2 faq-section-label"
+            data-category="donation"
+          >
+            দান ও অনুদান
+          </p>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="donation"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >আমি কীভাবে দান করতে পারি?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                আপনি তিনটি উপায়ে দান করতে পারেন — সোনালী ব্যাংক অ্যাকাউন্টে
+                সরাসরি জমা দিয়ে, বিকাশের মাধ্যমে সেন্ড মানি করে, অথবা আমাদের
+                অফিসে সরাসরি এসে। ব্যাংক অ্যাকাউন্ট নম্বর ও বিকাশ নম্বর আমাদের
+                <a
+                  href="donate.html"
+                  class="text-primary font-semibold hover:underline"
+                  >দান পেজে</a
+                >
+                পাওয়া যাবে।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="donation"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >সর্বনিম্ন কত টাকা দান করা যায়?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                দানের কোনো নির্দিষ্ট সর্বনিম্ন সীমা নেই। আপনি যেকোনো পরিমাণ দান
+                করতে পারেন। ছোট বা বড় — প্রতিটি অনুদানই আমাদের কাছে সমান
+                মূল্যবান এবং সুবিধাভোগীদের জীবনে প্রভাব ফেলে।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="donation"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >দানের অর্থ কীভাবে ব্যবহার করা হয়?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                সংগৃহীত অর্থ সরাসরি আমাদের চলমান প্রকল্পগুলোতে ব্যয় হয় —
+                শিক্ষা সহায়তা, স্বাস্থ্যসেবা, দুর্যোগ ত্রাণ ও দরিদ্র পরিবারের
+                পুনর্বাসনে। প্রশাসনিক খরচ সর্বোচ্চ ১০% এর মধ্যে সীমাবদ্ধ রাখা
+                হয়। প্রতি মাসে আমরা আর্থিক বিবরণী প্রকাশ করি।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="donation"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >আমি কি নির্দিষ্ট কোনো প্রকল্পের জন্য দান করতে পারি?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                হ্যাঁ, অবশ্যই। ব্যাংক বা বিকাশে পাঠানোর পর আমাদের দান ফর্মে
+                প্রকল্পের নাম উল্লেখ করুন। আমরা নিশ্চিত করব যে আপনার অর্থ সেই
+                নির্দিষ্ট প্রকল্পেই ব্যবহৃত হয়েছে। নির্দিষ্ট প্রকল্পের তালিকা
+                আমাদের
+                <a
+                  href="our_works.html"
+                  class="text-primary font-semibold hover:underline"
+                  >কার্যক্রম পেজে</a
+                >
+                পাওয়া যাবে।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="donation"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >দান করলে কি রসিদ পাব?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                হ্যাঁ। দান ফর্মে আপনার ই-মেইল বা ফোন নম্বর দিলে আমরা ৪৮ ঘণ্টার
+                মধ্যে আপনাকে একটি নিশ্চিতকরণ রসিদ পাঠাব। প্রয়োজনে অফিসেও রসিদ
+                সংগ্রহ করা যাবে।
+              </p>
+            </div>
+          </div>
+
+          <!-- ── কার্যক্রম ──────────────────────────────────── -->
+          <p
+            class="text-xs font-bold uppercase tracking-widest text-slate-400 pt-6 faq-section-label"
+            data-category="activities"
+          >
+            কার্যক্রম
+          </p>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="activities"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >বেতাগী মানবিক ফাউন্ডেশন কী কী কাজ করে?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                আমরা মূলত শিক্ষা বৃত্তি প্রদান, দরিদ্র রোগীদের চিকিৎসা সহায়তা,
+                প্রাকৃতিক দুর্যোগে ক্ষতিগ্রস্তদের ত্রাণ বিতরণ, এতিম শিশুদের
+                সহায়তা এবং কর্মসংস্থান তৈরিতে কাজ করি। আমাদের চলমান ও সম্পন্ন
+                প্রকল্পগুলো দেখতে
+                <a
+                  href="our_works.html"
+                  class="text-primary font-semibold hover:underline"
+                  >কার্যক্রম পেজ</a
+                >
+                পরিদর্শন করুন।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="activities"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >ফাউন্ডেশন কোন এলাকায় কাজ করে?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                আমরা মূলত বেতাগী উপজেলা ও বরগুনা জেলায় কাজ করি। তবে বড় দুর্যোগ
+                বা বিশেষ পরিস্থিতিতে সারা দেশে সহায়তা প্রদান করা হয়। ভবিষ্যতে
+                আমাদের কার্যপরিধি সারাদেশে বিস্তৃত করার পরিকল্পনা রয়েছে।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="activities"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >আমি কি সহায়তার জন্য আবেদন করতে পারি?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                হ্যাঁ। যোগ্য ব্যক্তি বা পরিবার আমাদের অফিসে সরাসরি যোগাযোগ করে
+                বা যোগাযোগ ফর্মে আবেদন করতে পারেন। আবেদনের পর আমাদের টিম
+                পরিস্থিতি যাচাই করে সহায়তার বিষয়ে সিদ্ধান্ত নেবে।
+              </p>
+            </div>
+          </div>
+
+          <!-- ── স্বেচ্ছাসেবী ──────────────────────────────── -->
+          <p
+            class="text-xs font-bold uppercase tracking-widest text-slate-400 pt-6 faq-section-label"
+            data-category="volunteer"
+          >
+            স্বেচ্ছাসেবী
+          </p>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="volunteer"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >আমি কি স্বেচ্ছাসেবক হিসেবে যোগ দিতে পারি?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                অবশ্যই। যেকোনো বয়সের ও পেশার মানুষ আমাদের স্বেচ্ছাসেবী দলে যোগ
+                দিতে পারেন। ফিল্ড ওয়ার্ক, ডিজিটাল মার্কেটিং, ফান্ডরেইজিং বা
+                শিক্ষাদান — যে ক্ষেত্রে আপনার দক্ষতা আছে সেখানেই আমরা আপনাকে
+                কাজে লাগাতে পারব। যোগাযোগ পেজে ফর্ম পূরণ করে আবেদন করুন।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="volunteer"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >স্বেচ্ছাসেবকদের কি কোনো পারিশ্রমিক দেওয়া হয়?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                স্বেচ্ছাসেবকরা বিনামূল্যে কাজ করেন বলেই এটি স্বেচ্ছাসেবিতা। তবে
+                দীর্ঘমেয়াদী ও নিবেদিতপ্রাণ স্বেচ্ছাসেবকদের জন্য ভ্রমণ ভাতা ও
+                প্রশিক্ষণের ব্যবস্থা আছে। পাশাপাশি অভিজ্ঞতা সনদ ও সুপারিশপত্র
+                প্রদান করা হয়।
+              </p>
+            </div>
+          </div>
+
+          <!-- ── যোগাযোগ ─────────────────────────────────── -->
+          <p
+            class="text-xs font-bold uppercase tracking-widest text-slate-400 pt-6 faq-section-label"
+            data-category="contact"
+          >
+            যোগাযোগ
+          </p>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="contact"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >অফিসের সময়সূচি কী?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                আমাদের অফিস শনিবার থেকে বৃহস্পতিবার সকাল ৯টা থেকে বিকেল ৫টা
+                পর্যন্ত খোলা থাকে। শুক্রবার সরকারি ছুটির দিনে অফিস বন্ধ থাকে।
+                জরুরি প্রয়োজনে ফোন বা ই-মেইলে যোগাযোগ করুন।
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden"
+            data-category="contact"
+          >
+            <button
+              class="w-full flex items-center justify-between p-6 text-left gap-4"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-semibold text-slate-800 text-base"
+                >আমার অভিযোগ বা পরামর্শ কোথায় জানাব?</span
+              >
+              <span
+                class="material-symbols-outlined faq-icon text-primary shrink-0"
+                >add</span
+              >
+            </button>
+            <div class="faq-answer px-6">
+              <p class="text-slate-600 text-sm leading-relaxed pb-6">
+                আপনার যেকোনো অভিযোগ বা পরামর্শ আমাদের
+                <a
+                  href="contact.html"
+                  class="text-primary font-semibold hover:underline"
+                  >যোগাযোগ পেজের</a
+                >
+                ফর্মের মাধ্যমে পাঠাতে পারেন। আমরা সাধারণত ৭২ ঘণ্টার মধ্যে
+                প্রতিক্রিয়া জানাই। আপনার মতামত আমাদের কার্যক্রম উন্নত করতে
+                সাহায্য করে।
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1 space-y-6">
+          <!-- Quick Contact Card -->
+          <div class="bg-primary rounded-2xl p-8 text-white sticky top-24">
+            <span class="material-symbols-outlined text-4xl mb-3 block"
+              >support_agent</span
+            >
+            <h3 class="text-xl font-bold mb-2">উত্তর খুঁজে পাননি?</h3>
+            <p class="text-sm opacity-90 mb-6 leading-relaxed">
+              আমাদের টিম আপনাকে সাহায্য করতে সদা প্রস্তুত। সরাসরি যোগাযোগ করুন।
+            </p>
+            <a
+              href="contact.html"
+              class="block text-center bg-white text-primary font-bold py-3 rounded-xl hover:bg-slate-100 transition text-sm"
+            >
+              যোগাযোগ করুন
+            </a>
+            <div class="mt-6 pt-6 border-t border-green-700 space-y-3 text-sm">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-green-300 shrink-0"
+                  >call</span
+                >
+                <span>+৮৮০১৭১২-৩৪৫৬৭৮</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-green-300 shrink-0"
+                  >mail</span
+                >
+                <span>info@betagimanobik.org</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEGIN: CTA Section -->
+      <section class="relative rounded-3xl overflow-hidden mt-20">
+        <div class="absolute inset-0">
+          <img
+            alt="মানবিক সেবায় স্বেচ্ছাসেবকরা"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4vf_UslKoWhF41diaXK9LCGkIyFOBuZEuJPgQ7u7p-SW3GGJGGzYpe8OaXoNPLKnI6v2lWr7q6OhkhdVhV6Fdx5JZsmZVnnzUKIbAppNd9SVy5ov_YuzE57Z8AoG3p8WJQpHzzfHpwnp_0YM_WMPq3vQObSfiRR_vr3NCp-_3YLPTqvil0w9iFoJBW2oSFoS94l89LFEwX9A4GQKbN2kvA_5IcMYT0sbIBnl7FgOHyFkANbKcNDGsmDtYnRWwF5X85Faa-YUX9beG"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/70 to-transparent"
+          ></div>
+        </div>
+        <div class="relative z-10 px-8 md:px-16 py-16 md:py-24 max-w-2xl">
+          <span
+            class="text-secondary uppercase text-sm font-semibold tracking-widest mb-4 block"
+            >মানবতার ডাকে সাড়া দিন</span
+          >
+          <h2 class="text-white text-3xl md:text-4xl font-bold mb-4">
+            আপনার একটি দান বদলে দিতে পারে একজনের জীবন
+          </h2>
+          <p class="text-white/80 text-lg mb-8">
+            আজই আমাদের সাথে যুক্ত হোন এবং বেতাগীর অসহায় মানুষের পাশে দাঁড়ান।
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-green-800 transition shadow-md"
+              href="donate.html"
+              >সরাসরি দান করুন</a
+            >
+            <a
+              class="bg-transparent text-white border border-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-white hover:text-dark transition"
+              href="contact.html"
+              >স্বেচ্ছাসেবী হিসেবে যোগ দিন</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- END: CTA Section -->
+    </main>
+
+    <!-- BEGIN: Footer -->
+    <footer class="bg-dark text-slate-400 pt-20 pb-10">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-slate-800 pb-16"
+      >
+        <!-- Col 1: About -->
+        <div>
+          <div class="flex items-center gap-2 mb-6">
+            <img
+              alt="Footer Logo"
+              class="h-12 w-auto rounded-full"
+              src="assets/images/logo-betagimanobikfoundation.jpg"
+            />
+            <div>
+              <span class="text-white text-xl font-bold block leading-tight"
+                >বেতাগী মানবিক</span
+              >
+              <span class="text-slate-400 text-sm block">ফাউন্ডেশন</span>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-6">
+            আমরা বিশ্বাস করি মানবতার সেবা সর্বোত্তম সেবা। বেতাগী উপজেলা সহ সারা
+            দেশে অসহায় মানুষের কল্যাণে আমরা অঙ্গীকারবদ্ধ।
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="bg-slate-800 p-2 rounded-full hover:bg-primary transition text-white"
+              href="#"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="bg-slate-800 p-2 rounded-full hover:bg-primary transition text-white"
+              href="#"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4
+            class="text-white font-bold text-lg mb-6 border-l-4 border-primary pl-4"
+          >
+            লিংকসমূহ
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a class="hover:text-primary transition" href="about_us.html"
+                >আমাদের সম্পর্কে</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#"
+                >সাফল্যের গল্প</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#">ব্লগ ও নিউজ</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#">ফটো গ্যালারি</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#">ক্যারিয়ার</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Col 3: Support -->
+        <div>
+          <h4
+            class="text-white font-bold text-lg mb-6 border-l-4 border-primary pl-4"
+          >
+            সহায়তা
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a class="hover:text-primary transition" href="donate.html"
+                >দান করুন</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#"
+                >স্বেচ্ছাসেবক হোন</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:text-primary transition"
+                href="faq.html"
+                class="text-primary"
+                >প্রশ্নোত্তর</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#"
+                >গোপনীয়তা নীতি</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition" href="#"
+                >ব্যবহারের শর্তাবলি</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Col 4: Contact -->
+        <div>
+          <h4
+            class="text-white font-bold text-lg mb-6 border-l-4 border-primary pl-4"
+          >
+            যোগাযোগ
+          </h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-primary shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+                <path
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              <span>বেতাগী পৌরসভা, বেতাগী, বরগুনা।</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg
+                class="w-5 h-5 text-primary shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              <span>+৮৮০১৭১২-৩৪৫৬৭৮</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg
+                class="w-5 h-5 text-primary shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              <span>info@betagimanobik.org</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 mt-10 text-center text-xs">
+        <p>© ২০২৪ বেতাগী মানবিক ফাউন্ডেশন। সর্বস্বত্ব সংরক্ষিত।</p>
+      </div>
+    </footer>
+    <!-- END: Footer -->
+
+    <script>
+      // Accordion toggle
+      function toggleFaq(btn) {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        // Close all
+        document
+          .querySelectorAll(".faq-item.open")
+          .forEach((el) => el.classList.remove("open"));
+        // Open clicked (if it wasn't already open)
+        if (!isOpen) item.classList.add("open");
+      }
+
+      // Category filter
+      document.querySelectorAll(".category-pill").forEach((pill) => {
+        pill.addEventListener("click", () => {
+          document
+            .querySelectorAll(".category-pill")
+            .forEach((p) => p.classList.remove("active"));
+          pill.classList.add("active");
+
+          const cat = pill.dataset.category;
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            item.style.display =
+              cat === "all" || item.dataset.category === cat ? "" : "none";
+          });
+          document.querySelectorAll(".faq-section-label").forEach((label) => {
+            label.style.display =
+              cat === "all" || label.dataset.category === cat ? "" : "none";
+          });
+          // Close all open items on filter change
+          document
+            .querySelectorAll(".faq-item.open")
+            .forEach((el) => el.classList.remove("open"));
+        });
+      });
+
+      // Search
+      document
+        .getElementById("faq-search")
+        .addEventListener("input", function () {
+          const q = this.value.trim().toLowerCase();
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            const text = item
+              .querySelector("button span")
+              .textContent.toLowerCase();
+            item.style.display = !q || text.includes(q) ? "" : "none";
+          });
+          document.querySelectorAll(".faq-section-label").forEach((label) => {
+            label.style.display = q ? "none" : "";
+          });
+          // Reset category pills
+          if (q) {
+            document
+              .querySelectorAll(".category-pill")
+              .forEach((p) => p.classList.remove("active"));
+          }
+        });
+    </script>
+  </body>
+</html>

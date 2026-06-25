@@ -135,7 +135,7 @@ a.hover\:text-primary:active {
 }
 
 footer .custom-logo {
-  height: 3rem;    /* h-12 — footer size */
+  height: 3rem; /* h-12 — footer size */
   border-radius: 9999px; /* rounded-full */
 }
 
@@ -266,8 +266,12 @@ footer .custom-logo {
   height: 3rem;
   font-size: 1.5rem;
 }
-.bmf-lightbox__prev { left: 1.25rem; }
-.bmf-lightbox__next { right: 1.25rem; }
+.bmf-lightbox__prev {
+  left: 1.25rem;
+}
+.bmf-lightbox__next {
+  right: 1.25rem;
+}
 
 /* =============================================
    Blog Post Content (.bmf-post-content)
@@ -287,27 +291,43 @@ footer .custom-logo {
   margin-bottom: 0.75rem;
   line-height: 1.35;
 }
-.bmf-post-content h2 { font-size: 1.5rem; }
-.bmf-post-content h3 { font-size: 1.25rem; }
-.bmf-post-content h4 { font-size: 1.1rem; }
-.bmf-post-content p  { margin-bottom: 1.25rem; }
+.bmf-post-content h2 {
+  font-size: 1.5rem;
+}
+.bmf-post-content h3 {
+  font-size: 1.25rem;
+}
+.bmf-post-content h4 {
+  font-size: 1.1rem;
+}
+.bmf-post-content p {
+  margin-bottom: 1.25rem;
+}
 .bmf-post-content a {
   color: #008e48;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.bmf-post-content a:hover { color: #0a251c; }
+.bmf-post-content a:hover {
+  color: #0a251c;
+}
 .bmf-post-content ul,
 .bmf-post-content ol {
   padding-left: 1.5rem;
   margin-bottom: 1.25rem;
 }
-.bmf-post-content ul { list-style-type: disc; }
-.bmf-post-content ol { list-style-type: decimal; }
-.bmf-post-content li { margin-bottom: 0.4rem; }
+.bmf-post-content ul {
+  list-style-type: disc;
+}
+.bmf-post-content ol {
+  list-style-type: decimal;
+}
+.bmf-post-content li {
+  margin-bottom: 0.4rem;
+}
 .bmf-post-content blockquote {
   border-left: 4px solid #008e48;
-  background: #E8F5F1;
+  background: #e8f5f1;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
   border-radius: 0 0.5rem 0.5rem 0;
@@ -331,8 +351,13 @@ footer .custom-logo {
   border-radius: 0.375rem;
   font-size: 0.875rem;
 }
-.bmf-post-content pre  { padding: 1rem; overflow-x: auto; }
-.bmf-post-content code { padding: 0.15rem 0.4rem; }
+.bmf-post-content pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+.bmf-post-content code {
+  padding: 0.15rem 0.4rem;
+}
 
 /* =============================================
    Blog Archive Pagination (.bmf-pagination)
@@ -462,7 +487,7 @@ footer .custom-logo {
 }
 
 .wpcf7-form.sent .wpcf7-response-output {
-  background: #E8F5F1;
+  background: #e8f5f1;
   color: #0a251c;
   border-left: 4px solid #008e48 !important;
 }
@@ -472,4 +497,57 @@ footer .custom-logo {
   background: #fef2f2;
   color: #7f1d1d;
   border-left: 4px solid #dc2626 !important;
+}
+
+/* =============================================
+   Project status badges
+   ============================================= */
+
+.bmf-status-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.bmf-status-current {
+  background: #e8f5f1;
+  color: #008e48;
+}
+
+.bmf-status-past {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* =============================================
+   FAQ Accordion
+   ============================================= */
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 600px;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-pill.active {
+  background: #008e48;
+  color: #ffffff;
+  border-color: #008e48;
+}
+.separate-containers .site-main {
+  margin: 0;
 }
